@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:time_tracker/app/sign_in/sign_in_button.dart';
+import 'package:time_tracker/common_widgets/custom_button.dart';
 
 class SignInPage extends StatelessWidget {
   @override
@@ -6,6 +9,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Time Tracker'),
+        centerTitle: true,
         elevation: 2.0,
       ),
       body: _buildContent(),
@@ -30,34 +34,53 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 8.0,
+            height: 48.0,
           ),
-          ElevatedButton(
-            child: Text('Sign in With Google'),
-            style: ElevatedButton.styleFrom(
-                primary: Colors.white,
-                onPrimary: Colors.black87,
-                textStyle: TextStyle(
-                  fontSize: 15.0,
-                ),
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(4))),
+          SignInButton(
+            text: 'Sign in With Google',
+            color: Colors.white,
             onPressed: () {},
           ),
-          Container(
-            color: Colors.teal,
-            child: SizedBox(
-              height: 100.00,
+          SizedBox(
+            height: 8.0,
+          ),
+          SignInButton(
+            text: 'Sign in With Facebook',
+            textColor: Colors.white,
+            color: Color(0xff334d92),
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          SignInButton(
+            text: 'Sign in With Email',
+            textColor: Colors.white,
+            color: Colors.teal[700]!,
+            onPressed: () {},
+          ),
+          SizedBox(
+            height: 8.0,
+          ),
+          Text(
+            'Or',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 14.0,
+              color: Colors.black87,
             ),
           ),
           SizedBox(
             height: 8.0,
           ),
-          Container(
-            color: Colors.tealAccent,
-            child: SizedBox(
-              height: 100.00,
-            ),
+          SignInButton(
+            text: 'Guest',
+            textColor: Colors.black87,
+            color: Colors.grey[300]!,
+            onPressed: () {},
+          ),
+          Image(
+            image: AssetImage('images/google-logo.png'),
           ),
         ],
       ),
