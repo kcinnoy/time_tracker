@@ -49,7 +49,7 @@ class CustomButton extends StatelessWidget {
           minimumSize: Size(width, height),
           shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(borderRadius))),
-      onPressed: () {},
+      onPressed: onPressed,
     );
   }
 }

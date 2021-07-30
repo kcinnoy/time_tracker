@@ -16,5 +16,6 @@ class SocialSignInButton extends CustomButton {
           text: text,
           color: color,
           textColor: textColor,
+          onPressed: onPressed,
         );
 }
