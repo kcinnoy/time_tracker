@@ -10,11 +10,19 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  User? _user;
+
+  void _updateUser(User user) {
+    print('User id:${user.uid}');
+  }
+
   @override
   Widget build(BuildContext context) {
     User? _user;
     if (_user == null) {
-      return SignInPage();
+      return SignInPage(
+        onSignIn: (user) => _updateUser(user),
+      );
     }
     return Container();
   }
